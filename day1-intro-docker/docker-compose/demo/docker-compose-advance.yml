@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+    - "data:/data"
+    ports:
+      - "5000:5000"
+  redis:
+    volumes:
+    - "data:/data"
+    image: "redis:alpine"
+volumes:
+  data:
+    external: true

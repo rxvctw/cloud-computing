@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hostpath-demo
+spec:
+  containers:
+  - name: demo-container
+    image: nginx:latest
+    volumeMounts:
+    - name: hostpath-volume
+      mountPath: /test-mnt
+  volumes:
+  - name: hostpath-volume
+    hostPath:
+      path: /Users/Shared/test-vol
+      type: DirectoryOrCreate

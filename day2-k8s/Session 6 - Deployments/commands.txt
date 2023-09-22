@@ -1,0 +1,22 @@
+kubectl get namespace
+kubectl apply -f nginx-deployment.yaml -n bootcamp
+kubectl get deploy -n bootcamp
+kubectl get rs -n bootcamp
+kubectl get po -n bootcamp
+kubectl get pods -n bootcamp -o wide
+-------------------------------------
+kubectl describe deploy nginx -n bootcamp
+update nginx version in nginx-deployment.yaml
+kubectl apply -f nginx-deployment.yaml -n bootcamp
+kubectl get pods -n bootcamp -w
+#
+kubectl get rs -n bootcamp
+kubectl describe deploy nginx -n bootcamp
+#rollback
+kubectl rollout undo deploy nginx -n bootcamp  
+#history
+kubectl rollout history deploy nginx -n bootcamp
+
+kubectl rollout pause deploy nginx -n bootcamp
+kubectl rollout resume deployment/nginx -n bootcamp
+kubectl scale  deployment nginx -n bootcamp

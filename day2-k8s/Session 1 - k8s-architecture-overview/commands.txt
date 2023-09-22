@@ -1,0 +1,5 @@
+kubectl version
+kubectl cluster-info
+kubectl config view
+kubectl get nodes -o wide
+kubectl get namespaces

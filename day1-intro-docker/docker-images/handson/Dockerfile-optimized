@@ -1,0 +1,6 @@
+FROM golang
+WORKDIR /usr/app/src
+COPY vendor .
+COPY . .
+RUN make build
+CMD ["./out/go-app"]

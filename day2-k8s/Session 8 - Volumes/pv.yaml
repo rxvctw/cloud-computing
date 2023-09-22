@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+ name: mypv
+spec:
+ storageClassName: manual
+ capacity:
+   storage: 1Gi
+ accessModes:
+   - ReadWriteOnce
+ persistentVolumeReclaimPolicy: Retain
+ hostPath:
+   path: "/Users/larafaela.parra/Desktop/PUCE/infra-bootcamp/day2-k8s/nginx"
+

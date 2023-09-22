@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: pod-metadata-service
+spec:
+ containers:
+ - name: metada-service
+   image: rxvc/metadata-service:1.0.0
+   ports:
+   - containerPort: 8080

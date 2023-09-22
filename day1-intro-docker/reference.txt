@@ -1,0 +1,130 @@
+DOCKER BASICS
+------------
+// list all images
+docker images
+
+// pull a specific image
+docker pull image:tag
+
+// list running containers
+docker ps
+docker container ls
+
+// list all containers
+docker ps -a
+docker container ls -a
+
+// run container from image
+docker run --name name image:tag
+
+// run container in background
+docker run -d --name name image:tag
+
+// stop a container
+docker start
+
+// restart a stopped container
+docker start
+
+DOCKER INTERACTIONS
+-------------------
+// port forward
+docker run --name nginx1 -p 80:80 -d nginx
+
+// Execute command inside running container
+docker exec nginx touch new.txt
+
+// Execute command Interactivity inside running container
+docker exec -it nginx bash
+
+// get logs from runing container
+docker logs -t nginx
+
+// get information on runnning container
+docker inspect nginx
+
+// pass env variable to container
+docker run -e REDIS_HOST=172.17.0.6  goapp-network
+
+
+DOCKER IMAGES
+---
+// build image
+docker built -t image:tag .
+
+// run container from image
+docker run image:tag
+
+// run container in background
+docker run -d image:tag
+
+// stop container
+docker stop container-id/name
+
+// create tag
+docker tag currentImage:tag newImage:newTag
+
+// push image to docker hub
+docker push namespace/image:tag
+
+
+DOCKER VOLUMES
+--------------
+// create a volume
+docker volume create demo
+
+// list all volumes
+docker volume ls
+
+// list info of volume
+docker inspect demo
+
+// remove a volume
+docker volume rm demo
+
+// attach volume to container
+docker run -it -v my-volume:/data --name my-container ubuntu:latest
+
+// detach volume from container
+docker rm -v <container_sha>
+
+
+DOCKER NETWORK
+--------------
+// create a network
+docker network create my_network
+
+// list all network
+docker network ls
+
+// list info of network
+docker network inspect my_network
+
+// remove network
+docker network rm my_network
+
+// connect network
+docker network connect my_network nginx
+
+// disconnect network
+docker network disconnect my_network nginx
+
+
+
+DOCKER COMPOSE:
+---
+// run compose file
+docker-compose up
+
+// run compose file in background
+docker-compose up -d
+
+// only build
+docker-compose build
+
+// scale up/down
+docker-compose scale web=2
+docker-compose scale redis=2
+
+// destroy compose
+docker-compose down

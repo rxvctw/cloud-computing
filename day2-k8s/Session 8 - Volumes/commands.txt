@@ -1,0 +1,30 @@
+####emptyDir
+kubectl apply -f multi-container-pod.yaml
+kubectl exec -it multi-container-demo -c container-1 -- /bin/sh\n
+cd /var/www/html
+echo "Contenido de prueba" > archivo.txt
+cat archivo.txt
+--------------------------------
+contenedor 2
+cd /var/www/html/
+cat archivo.txt
+--------------------------------
+create pv
+kubectl apply -f pvc.yaml
+kubectl get pv
+
+create pvc
+kubectl apply -f pvc.yaml
+kubectl get pvc
+
+create pod use pvc
+kubectl apply -f usedpvc.yaml
+kubectl get pod
+kubectl exec -it nginx-pod -- bash
+cd /usr/share/nginx/html
+touch text.txt
+exit
+ kubectl delete po nginx-pod
+ kubectl apply -f usedpvc.yaml
+ 
+

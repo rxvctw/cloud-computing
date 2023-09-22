@@ -1,0 +1,5 @@
+kubectl apply -f replicaSet.yaml
+kubectl get pods
+kubectl port-forward dobby-rs-4hlbq 8080:4444
+curl http://localhost:8080/readiness
+curl http://localhost:8080/health

@@ -1,0 +1,2 @@
+minikube status
+kubectl apply -f pod.yaml
