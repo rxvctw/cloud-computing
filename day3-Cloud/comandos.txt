@@ -1,0 +1,8 @@
+sudo apt update
+sudo apt install apache2 php libapache2-mod-php php-mysql awscli
+sudo systemctl restart apache2
+cd /var/www/html
+sudo rm index.html
+sudo aws s3 sync s3://testboocamp /var/www/html
+cargamos la pagina web
+
