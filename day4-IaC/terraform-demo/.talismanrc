@@ -1,0 +1,16 @@
+fileignoreconfig:
+- filename: answer/autoscaling.tf
+  checksum: 029cdfc2996d3da388e3f2dc305234dc7f6a376ed390fd4decb529286f32c810
+- filename: answer/key.tf
+  checksum: 7308a1fbe8239bdfef4f7bb621c4968c1715b8a53babdb51e1e2e5fe6a38c077
+- filename: demo/trainer-demo/.terraform.lock.hcl
+  checksum: ef44ea047dac56a3719408bff4e93b8696c7c030d636cda9b912907bffbbad78
+- filename: demo/trainer-demo/backend.tf_bkp
+  checksum: f04f71e04bdee01465e4481137e02b6a5d7f90d71a88fca0fc5a905bb94efef6
+- filename: demo/trainer-demo/vars.tf
+  checksum: fa2c30e1c5410cc4702417aa543e2bd3f8b6e04a7becf47bf1c01ae6de243218
+- filename: question/autoscaling.tf
+  checksum: be9393d01d685d9e22b8cf6e5bc1eb218566165c90383a44690cbe87ba8b8d0c
+- filename: question/key.tf
+  checksum: b386f4ac92bd3a5711865c8623ab6c74624b63e97fa5c6c9c998d9f55c62b12a
+version: "1.0"
