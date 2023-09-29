@@ -16,8 +16,7 @@ variable "environment" {
 variable "amis" {
   type    = map(string)
   default = {
-    ap-south-1 = "ami-041db4a969fe3eb68"
-    ap-south-2 = "ami-32434123142323412"
+    us-east-2 = "ami-0d406e26e5ad4de53"
   }
 }
 
