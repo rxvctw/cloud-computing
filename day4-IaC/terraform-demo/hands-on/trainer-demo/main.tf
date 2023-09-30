@@ -6,8 +6,11 @@ data "aws_vpc" "default_vpc" {
   default = true
 }
 
-data "aws_subnet_ids" "subnet_1" {
-  vpc_id = data.aws_vpc.default_vpc.id
+data "aws_subnets" "subnets" {
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.default_vpc.id]
+  }
 }
 
 resource "random_id" "suffix" {
@@ -15,9 +18,10 @@ resource "random_id" "suffix" {
 }
 
 resource "aws_instance" "demo" {
-  for_each      = data.aws_subnet_ids.subnet_1.ids
+  for_each      = toset(data.aws_subnets.subnets.ids)
   ami           = var.amis[var.aws_region]
   instance_type = "t2.micro"
+  subnet_id     = each.key
   tags          = {
     Name = local.instance_name
   }
