@@ -24,7 +24,7 @@ resource "aws_instance" "demo" {
 }
 
 module s3_bucket {
-  source      = "module"
+  source      = "./module"
   bucket_name = "${var.bucket_name}-${random_id.suffix.hex}}"
   environment = var.environment
 }
