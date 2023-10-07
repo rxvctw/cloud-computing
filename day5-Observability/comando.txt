@@ -1,0 +1,4 @@
+create of file docker-compose.yml
+docker-compose pull
+docker-compose up -d
+docker ps
