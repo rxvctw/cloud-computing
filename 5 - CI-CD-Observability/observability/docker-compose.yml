@@ -15,7 +15,7 @@ services:
     - 3000:3000
 
   prometheus:
-    image: prom/prometheus:v2.28.1
+    image: prom/prometheus:v2.47.1
     container_name: prometheus
     restart: unless-stopped
     volumes:
@@ -43,7 +43,7 @@ services:
 
         
   cadvisor:
-    image: gcr.io/cadvisor/cadvisor:latest
+    image: gcr.io/cadvisor/cadvisor:v0.44.1-test
     container_name: cadvisor
     restart: unless-stopped
     expose:
@@ -55,7 +55,7 @@ services:
     - /var/lib/docker/:/var/lib/docker:ro
     
   app_example:
-    image: quay.io/brancz/prometheus-example-app:v0.3.0
+    image: quay.io/brancz/prometheus-example-app:v0.5.0
     container_name: app_example
     restart: unless-stopped
     ports:
